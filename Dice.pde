@@ -1,7 +1,7 @@
 Die barry;
 int counter;
 void setup() {
-  size(600, 600);
+  size(450, 450);
   //rect (x,y,width,height)
   noLoop();
 }
@@ -10,7 +10,7 @@ void draw() {
   background(218, 196, 255);
   for (int y = 0; y<=250; y+=50) {
     for (int x = 0; x<=250; x+=50) {
-      barry = new Die(y, x, 45, 45);   //instatiating a new object - new adds an instance of a class
+      barry = new Die(y+75, x+75, 45, 45);   //instatiating a new object - new adds an instance of a class
       barry.show();                   // new tells computer how much space to reserve (primatives already set size)
 
       if (barry.chance == 1)
@@ -28,7 +28,7 @@ void draw() {
     }
   }
   textSize(50);
-  text(counter, 300, 300);
+  text(counter, 190, 410);
   counter = 0;
 }
 
