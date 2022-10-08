@@ -8,9 +8,12 @@ void setup() {
 
 void draw() {
   background(218, 196, 255);
-  for (int y = 0; y<=250; y+=50) {
-    for (int x = 0; x<=250; x+=50) {
-      barry = new Die(y+75, x+75, 45, 45);   //instatiating a new object - new adds an instance of a class
+  for (int y = 0; y<=300; y+=50) {
+    for (int x = 0; x<=300; x+=50) {
+ 
+      fill(y+40,x+40,(int)(Math.random()*255)+200);
+     
+      barry = new Die(y+50, x+50, 45, 45);   //instatiating a new object - new adds an instance of a class
       barry.show();                   // new tells computer how much space to reserve (primatives already set size)
 
       if (barry.chance == 1)
@@ -27,8 +30,10 @@ void draw() {
         counter=counter+6;
     }
   }
-  textSize(50);
-  text(counter, 190, 410);
+  fill(100, 100, 100);
+  textSize(25);
+  text("TOTAL:", 145, 430);
+  text(counter, 240, 430);
   counter = 0;
 }
 
@@ -71,8 +76,13 @@ class Die {
   }
 
   void show() {
-    fill(220);
+    //strokeWeight(2);
+    //for(int o = 250; o > 50; o-=10)
+    //stroke((int)(Math.random()*150)+60,o,(int)(Math.random()*205)+150,o);
+ 
     rect(rect1, rect2, rectw, recth, rectShape);
+    strokeWeight(1);
+    stroke(0);
     if (chance==1) {
       fill(0);
       ellipse(rect1+22.5, rect2+22.5, 5, 5);
